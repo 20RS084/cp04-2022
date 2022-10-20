@@ -154,6 +154,7 @@
         var active = false;
         var startTime = 0;
         var period = 0;
+        var setTime = 0;
 
 
         // ボタンの初期設定
@@ -196,6 +197,7 @@
             period = 60 * parseInt($("#minute").val()) + parseInt($("#second").val());
             $("#time").html("経過時間： 0");
             $("#remain").html("残り時間： " + parseInt(period / 60) + "分" + period % 60 + "秒");
+            setTime=period;
             //period);
         }
 
@@ -229,6 +231,8 @@
                 $("#btnA").css("border", "0");
                 $("#btnB").css("border", "5px solid");
                 $("#btnC").css("border", "0");
+                $("body").css("animation","colorchange "+setTime+"s linear");
+                $("body").css("animation-iteration-count","infinite");
             }else if(con==1){
                 $("#btnA").html("Start");
                 $("#btnA").prop("disabled", false);
@@ -237,6 +241,7 @@
                 $("#btnA").css("border", "5px solid");
                 $("#btnB").css("border", "0");
                 $("#btnC").css("border", "5px solid");
+                $("body").css("animation-play-state","paused");
             }
         }
     </script>
