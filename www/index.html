@@ -210,11 +210,9 @@
                 $("#time").html("経過時間： " + time);
                 $("#remain").html("残り時間： " + m + "分" + s + "秒"); //+rest);
                 analog(rest);
-                $("#btnA").prop("disabled", true);
-                $("#btnB").prop("disabled", false);
+                color1(0);
             } else {
-                $("#btnA").prop("disabled", false);
-                $("#btnB").prop("disabled", true);
+                color1(1);
             }
             if (rest <= 0) {
                 active = false;
@@ -222,14 +220,30 @@
             }
         }
 
-        var color=0;
-        body{
-            background-color:rgb(134, 182, 255);;
+        function color1(con){
+            if(con==0){
+                $("#btnA").html("計測中");
+                $("#btnA").prop("disabled", true);
+                $("#btnB").prop("disabled", false);
+                $("#btnC").prop("disabled", true);
+                $("#btnA").css("border", "0");
+                $("#btnB").css("border", "5px solid");
+                $("#btnC").css("border", "0");
+            }else if(con==1){
+                $("#btnA").html("Start");
+                $("#btnA").prop("disabled", false);
+                $("#btnB").prop("disabled", true);
+                $("#btnC").prop("disabled", false);
+                $("#btnA").css("border", "5px solid");
+                $("#btnB").css("border", "0");
+                $("#btnC").css("border", "5px solid");
+            }
         }
     </script>
 </head>
 
 <body>
+    <divbackground>
     <canvas id="mycanvas" width="200" height="200">Test</canvas>
 
     <div id="minuteStr">〇</div>
