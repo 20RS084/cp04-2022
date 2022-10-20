@@ -1,6 +1,6 @@
 /**/
     #minuteStr {
-        color: #ff0000;
+        color: #b3ec72;
         font-size: 20px;
         text-align: left;
         position:absolute; top:210px; 
@@ -16,7 +16,7 @@
     }
 
     #remain {
-        color: #ff0000;
+        color: #000000;
         font-size: 20px;
         text-align: center;
         position:absolute; top:310px; 
@@ -34,17 +34,18 @@
         width:50%;
         margin:0 auto;
     }
-    
+
     #time::after{
         content:"秒";
     }
 
     #mycanvas {
-        color: #ffffff;
+        color: #904297;
         font-size: 40px;
         text-align: center;
         position:absolute; top:10px; 
         left:10px; right:10px;
+        margin : 0 auto;
     }
     
     #btnA {
